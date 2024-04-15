@@ -8,3 +8,4 @@ services:
       - ./meili_data:/meili_data
     environment:
       - MEILI_ENV=development
+      - MEILI_MASTER_KEY=masterKey
