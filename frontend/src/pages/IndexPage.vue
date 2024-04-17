@@ -1,22 +1,33 @@
 <template>
   <q-page>
 
-    <div class="row flex-center q-my-md">
-      <div class="col-xs-2 col-sm-1 col-md-1 q-mx-md">
-        <q-select v-model="size" :options="sizeList" label="Movie per page" />
-      </div>
+    <div class="row flex-center items-center q-my-md">
       <div class="col-xs-8 col-sm-6 col-md-4">
         <q-input
+          color="secondary"
           v-model="search"
           debounce="500"
-          filled
-          placeholder="Search"
+          rounded
+          outlined
+          placeholder="Search..."
         >
           <template v-slot:append>
             <q-icon name="search" />
           </template>
         </q-input>
       </div>
+
+      <div class="q-pa-md">
+        <q-btn @click="filter = !filter" round color="secondary" :outline="!filter" icon="filter_alt" />
+      </div>
+    </div>
+
+    <div class="row flex flex-center">
+      <q-slide-transition style="max-width: 500px;">
+        <div class="col-2" v-show="filter">
+            <q-select outlined color="secondary" v-model="size" :options="sizeList" label="Page Size"/>
+        </div>
+      </q-slide-transition>
     </div>
 
     <div class="row flex-center items-start q-gutter-md q-py-md q-px-xl">
@@ -41,8 +52,10 @@
 
       </q-card>
     </div>
-    <div class="row flex-center q-mb-lg">
+    <div class="row flex-center q-my-lg">
       <q-pagination
+        color="secondary"
+        size="15px"
         class="justify-center"
         v-model="page"
         :max="totalPages"
@@ -62,11 +75,12 @@ export default defineComponent({
     return {
       search: "",
       page: 1,
-      size: 12,
+      size: 15,
       totalPages: 1,
       totalElements: 0,
-      sizeList: [12, 24, 54, 99],
-      movies: []
+      sizeList: [15, 30, 50, 100],
+      movies: [],
+      filter: false
     }
   },
   methods: {
