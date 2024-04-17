@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header class="bg-teal-10">
       <q-toolbar>
         <q-btn
           flat
@@ -12,10 +12,10 @@
         />
 
         <q-toolbar-title>
-          Movie search via meilisearch
+          Search Movie
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div>Powered By Meilisearch</div>
       </q-toolbar>
     </q-header>
 
