@@ -22,7 +22,7 @@ This project is a demonstration of a movie search API built with Spring Boot and
 
    a. Ensure you have Docker and Docker Compose installed.
 
-   b. Create a `docker-compose.yaml` file in the project root with the following content:
+   b. Create a `compose.yaml` file in the project root with the following content:
       ```yaml
       version: "3.9"
       services:
