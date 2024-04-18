@@ -1,5 +1,14 @@
 version: "3.9"
 services:
+  app:
+    image: "spring-boot-quasar-movie-search:latest"
+    ports:
+      - "8080:8080"
+    environment:
+      - MEILISEARCH_API_KEY=masterKey
+      - MEILISEARCH_URL=http://meilisearch:7700
+    networks:
+      - meilisearch-common-network
   meilisearch:
     image: "getmeili/meilisearch:v1.7"
     ports:
@@ -9,3 +18,8 @@ services:
     environment:
       - MEILI_ENV=development
       - MEILI_MASTER_KEY=masterKey
+    networks:
+      - meilisearch-common-network
+
+networks:
+  meilisearch-common-network:
