@@ -12,7 +12,7 @@ This project is a demonstration of a movie search API built with Spring Boot and
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/mehdizebhi/spring-data-meilisearch-demo
+   git clone https://github.com/mehdizebhi/spring-data-meilisearch-demo.git
    cd spring-data-meilisearch-demo
    ```
 
